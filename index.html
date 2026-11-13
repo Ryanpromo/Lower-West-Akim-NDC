@@ -1,0 +1,1286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#016436">
+  <meta name="description" content="The official online home of the Lower West Akim Constituency NDC 9th Executive. News, community projects, events and ways to get involved.">
+  <title>Lower West Akim NDC | Unity. Service. Victory.</title>
+  <style>
+    :root {
+      --green: #0d6a3d;
+      --green-dark: #0b2e22;
+      --green-soft: #eaf3ee;
+      --red: #c8102e;
+      --black: #111111;
+      --white: #ffffff;
+      --ink: #111713;
+      --muted: #536159;
+      --paper: #f7f3f1;
+      --cream: #f1efe8;
+      --line: #dce5de;
+      --shadow: 0 18px 50px rgba(15, 54, 35, .10);
+      --radius: 18px;
+      --content: 1160px;
+      --text-scale: 1;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 16, 46, 0.10), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(13, 106, 61, 0.12), transparent 26%),
+        linear-gradient(180deg, #f7f3f1 0%, #ffffff 22%, #f3f0ec 100%);
+      font: 16px/1.6 "Segoe UI", Arial, sans-serif;
+      font-size: calc(16px * var(--text-scale));
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    img, svg { display: block; max-width: 100%; }
+    :focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+    .skip-link {
+      position: fixed; z-index: 100; top: 10px; left: 10px; padding: 10px 14px;
+      transform: translateY(-160%); border-radius: 4px; background: white; color: var(--green-dark); font-weight: 800;
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .wrap { width: min(var(--content), calc(100% - 44px)); margin-inline: auto; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--green); font-size: .75rem; font-weight: 800;
+      letter-spacing: .13em; text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 23px; height: 2px; background: var(--red); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { line-height: 1.12; letter-spacing: -.035em; }
+    h2 { margin-bottom: 15px; font-size: clamp(2rem, 4vw, 3.2rem); }
+    .section { padding: 92px 0; }
+    .section-heading { max-width: 690px; margin-bottom: 38px; }
+    .section-heading p { max-width: 590px; margin-bottom: 0; color: var(--muted); }
+    .section-heading .eyebrow { margin-bottom: 15px; }
+    .btn {
+      display: inline-flex; min-height: 48px; align-items: center; justify-content: center;
+      gap: 10px; padding: 0 20px; border: 1px solid transparent; border-radius: 7px;
+      background: var(--green); color: white; font-weight: 750; text-decoration: none;
+      cursor: pointer; transition: background .2s, transform .2s;
+    }
+    .btn:hover { background: var(--green-dark); transform: translateY(-1px); }
+    .btn-light { border-color: rgba(255,255,255,.55); background: transparent; color: white; }
+    .btn-light:hover { background: white; color: var(--green-dark); }
+    .btn-outline { border-color: var(--green); background: transparent; color: var(--green); }
+    .btn-outline:hover { background: var(--green); color: white; }
+    .arrow { font-size: 1.1em; }
+
+    .topline { background: var(--green-dark); color: white; font-size: .8rem; }
+    .topline-inner { min-height: 36px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .topline p { margin: 0; opacity: .94; }
+    .topline a { color: white; text-decoration: none; font-weight: 700; }
+    .topline-right { display: flex; align-items: center; gap: 18px; }
+    .top-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
+    .header {
+      position: sticky; z-index: 20; top: 0; border-top: 3px solid var(--red); background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--line); backdrop-filter: blur(12px);
+    }
+    .nav-row { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; min-width: 220px; text-decoration: none; }
+    .brand-mark {
+      width: 44px; height: 48px; display: grid; flex: 0 0 auto; place-items: center;
+      overflow: hidden; border: 1px solid rgba(207,19,43,.2); border-radius: 9px;
+      background: white; box-shadow: 0 3px 12px rgba(1,100,54,.10);
+    }
+    .brand-mark img { width: 33px; height: 45px; object-fit: contain; }
+    .brand-name { display: block; color: var(--green-dark); font-size: .76rem; font-weight: 900; letter-spacing: .035em; line-height: 1.22; text-transform: uppercase; }
+    .brand-sub { display: block; margin-top: 4px; color: #78827b; font-size: .62rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: clamp(12px, 1.5vw, 22px); margin: 0; padding: 0; list-style: none; }
+    .nav-links a { color: #334139; font-size: .77rem; font-weight: 700; text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--green); }
+    .nav-join { min-height: 40px; padding-inline: 16px; font-size: .78rem; }
+    .staff-link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 40px; padding: 0 16px; border-radius: 7px;
+      background: rgba(1,100,54,.08); color: var(--green-dark); font-size: .78rem; font-weight: 800; text-decoration: none;
+    }
+    .menu-toggle {
+      display: none; width: 44px; height: 44px; align-items: center; justify-content: center;
+      border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--green-dark);
+      font-size: 1.4rem; cursor: pointer;
+    }
+    .nav-tools { display: flex; align-items: center; gap: 8px; }
+    .settings-toggle {
+      width: 44px; height: 44px; display: inline-grid; place-items: center;
+      border: 1px solid var(--line); border-radius: 8px; background: white; color: var(--green-dark); cursor: pointer;
+    }
+    .settings-toggle:hover { border-color: var(--red); color: var(--red); }
+    .settings-toggle svg { width: 21px; height: 21px; }
+    .settings-toggle svg path, .settings-toggle svg circle { vector-effect: non-scaling-stroke; }
+    .accessibility-dialog {
+      width: min(440px, calc(100% - 28px)); max-height: min(85vh, 680px); margin: auto; padding: 0;
+      border: 1px solid var(--line); border-top: 5px solid var(--red); border-radius: 10px;
+      background: white; color: var(--ink); box-shadow: 0 24px 80px rgba(0,0,0,.32);
+    }
+    .accessibility-dialog::backdrop { background: rgba(0,0,0,.68); }
+    .settings-content { padding: 22px; }
+    .settings-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+    .settings-heading h2 { margin: 0 0 5px; font-size: 1.45rem; }
+    .settings-heading p { margin: 0; color: var(--muted); font-size: .82rem; }
+    .settings-close {
+      width: 40px; height: 40px; flex: 0 0 auto; border: 1px solid var(--line); border-radius: 6px;
+      background: white; color: var(--ink); font-size: 1.35rem; cursor: pointer;
+    }
+    .settings-group { display: grid; gap: 12px; margin: 0; padding: 16px 0; border: 0; border-top: 1px solid var(--line); }
+    .settings-group legend { padding: 0 0 10px; font-weight: 850; }
+    .settings-size { display: flex; align-items: center; justify-content: space-between; gap: 15px; font-size: .9rem; font-weight: 700; }
+    .settings-size select { min-height: 42px; min-width: 145px; padding: 7px 10px; border: 1px solid #87958b; border-radius: 5px; background: white; color: var(--ink); }
+    .settings-option { display: flex; align-items: center; gap: 11px; min-height: 36px; font-size: .9rem; cursor: pointer; }
+    .settings-option input { width: 20px; height: 20px; flex: 0 0 auto; accent-color: var(--green); }
+    .settings-actions { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 8px; }
+    .settings-reset { min-height: 42px; padding: 0 12px; border: 1px solid var(--green); border-radius: 5px; background: white; color: var(--green-dark); font-weight: 750; cursor: pointer; }
+    .settings-status { min-height: 1.4em; margin: 12px 0 0; color: var(--green-dark); font-size: .78rem; }
+    body {
+      --content-line-height: 1.6;
+    }
+    body[data-text-size="large"] { --text-scale: 1.125; }
+    body[data-text-size="larger"] { --text-scale: 1.25; }
+    body[data-line-height="comfortable"] { --content-line-height: 1.8; }
+    body[data-line-height="spacious"] { --content-line-height: 2.05; }
+    body[data-underline-links="true"] a { text-decoration: underline; text-underline-offset: .18em; }
+    body[data-reading-mode="true"] main .wrap,
+    body[data-reading-mode="true"] .section .wrap,
+    body[data-reading-mode="true"] .soft-section .wrap,
+    body[data-reading-mode="true"] .contact-section .wrap,
+    body[data-reading-mode="true"] .quick-facts .wrap { max-width: 980px; }
+    body[data-reading-mode="true"] .hero { min-height: 500px; }
+    body[data-large-controls="true"] button,
+    body[data-large-controls="true"] .btn,
+    body[data-large-controls="true"] select,
+    body[data-large-controls="true"] input,
+    body[data-large-controls="true"] a { min-height: 44px; }
+    body[data-large-controls="true"] .settings-toggle,
+    body[data-large-controls="true"] .menu-toggle { min-width: 44px; }
+    body[data-contrast="high"] { --ink: #000; --muted: #262626; --paper: #fff; --cream: #fff; --line: #000; }
+    body[data-contrast="high"] .section,
+    body[data-contrast="high"] .soft-section,
+    body[data-contrast="high"] .contact-section,
+    body[data-contrast="high"] .quick-facts { background: #fff; color: #000; }
+    body[data-contrast="high"] .person-card,
+    body[data-contrast="high"] .news-card,
+    body[data-contrast="high"] .project-card,
+    body[data-contrast="high"] .field-report-card,
+    body[data-contrast="high"] .contact-item,
+    body[data-contrast="high"] .join-form,
+    body[data-contrast="high"] .contact-form { border: 2px solid #000; }
+    body[data-contrast="high"] .hero,
+    body[data-contrast="high"] .join-band,
+    body[data-contrast="high"] .footer { background: #000; }
+    body[data-reduced-motion="true"] *,
+    body[data-reduced-motion="true"] *::before,
+    body[data-reduced-motion="true"] *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    p, li, label, .nav-links a, .person-card p, .news-card p, .project-card p, .field-report-card p, .quote { line-height: var(--content-line-height); }
+
+    .hero {
+      position: relative; overflow: hidden; min-height: 590px;
+      background:
+        radial-gradient(ellipse at 86% 20%, rgba(207,19,43,.43), transparent 34%),
+        radial-gradient(ellipse at 10% 110%, rgba(1,100,54,.85), transparent 53%),
+        linear-gradient(115deg, #101613 0%, #016436 58%, #a31f36 125%);
+      background-size: 150% 150%; animation: brand-shift 20s ease-in-out infinite alternate;
+      color: white;
+    }
+    @keyframes brand-shift {
+      from { background-position: 0% 40%; }
+      to { background-position: 100% 60%; }
+    }
+    .hero::before, .hero::after { position: absolute; content: ""; pointer-events: none; }
+    .hero::before {
+      width: 700px; height: 700px; top: -310px; right: -80px; border: 1px solid rgba(255,255,255,.11);
+      border-radius: 50%; box-shadow: 0 0 0 55px rgba(255,255,255,.025), 0 0 0 110px rgba(255,255,255,.02);
+    }
+    .hero::after { width: 38%; height: 100%; top: 0; right: 0; background: linear-gradient(90deg, transparent, rgba(0,0,0,.10)); }
+    .hero-inner { position: relative; z-index: 1; min-height: 590px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 40px; padding-block: 66px; }
+    .hero-copy { max-width: 650px; }
+    .hero .eyebrow { color: #d8f0df; }
+    .hero h1 { margin: 18px 0 22px; max-width: 660px; font-size: clamp(3rem, 6vw, 5.3rem); font-weight: 850; }
+    .hero h1 .accent { color: white; }
+    .hero-copy > p { max-width: 550px; margin-bottom: 27px; color: rgba(255,255,255,.82); font-size: 1.08rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 42px; color: rgba(255,255,255,.74); font-size: .83rem; }
+    .hero-note strong { color: white; }
+    .note-rule { width: 36px; height: 2px; background: var(--red); }
+    .hero-visual { position: relative; min-height: 375px; display: grid; place-items: center; }
+    .hero-orbit { position: absolute; width: min(390px, 100%); aspect-ratio: 1; border: 1px solid rgba(255,255,255,.2); border-radius: 50%; }
+    .hero-orbit::before, .hero-orbit::after { position: absolute; content: ""; border: 1px solid rgba(255,255,255,.13); border-radius: 50%; inset: 30px; }
+    .hero-orbit::after { inset: 67px; }
+    .crest {
+      position: relative; z-index: 1; width: 205px; height: 268px; display: grid; place-items: center;
+      overflow: hidden; border: 1px solid rgba(255,255,255,.65); border-radius: 22px;
+      background: rgba(255,255,255,.96); box-shadow: 0 22px 80px rgba(0,0,0,.25);
+    }
+    .crest-logo { width: 178px; height: 250px; object-fit: contain; }
+    .crest-star { color: var(--red); font-size: 2.4rem; line-height: 1; }
+    .crest strong { display: block; margin-top: 8px; font-size: 2.1rem; letter-spacing: -.08em; }
+    .crest small { display: block; max-width: 140px; margin: 5px auto 0; color: rgba(255,255,255,.82); font-size: .63rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .visual-tag { position: absolute; z-index: 2; padding: 11px 15px; border: 1px solid rgba(255,255,255,.2); border-radius: 8px; background: #fff; color: var(--ink); box-shadow: var(--shadow); }
+    .visual-tag b { display: block; color: var(--green); font-size: .88rem; }
+    .visual-tag span { display: block; color: var(--muted); font-size: .7rem; }
+    .tag-one { top: 12%; right: 0; }
+    .tag-two { bottom: 11%; left: -1%; }
+    .slider-controls { position: absolute; z-index: 3; right: max(22px, calc((100% - var(--content)) / 2)); bottom: 34px; display: flex; align-items: center; gap: 8px; }
+    .slider-controls button { width: 35px; height: 35px; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; background: transparent; color: white; cursor: pointer; }
+    .slider-controls button:hover { background: white; color: var(--green-dark); }
+    .slide-count { padding-inline: 5px; font-size: .74rem; }
+
+    .quick-facts { position: relative; z-index: 2; margin-top: -1px; border-bottom: 1px solid var(--line); background: white; }
+    .facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .fact { display: flex; align-items: center; gap: 16px; padding: 24px 28px; border-right: 1px solid var(--line); }
+    .fact:first-child { padding-left: 0; }
+    .fact:last-child { border: 0; }
+    .fact-icon { width: 42px; height: 42px; display: grid; flex: 0 0 auto; place-items: center; border-radius: 12px; background: var(--green-soft); color: var(--green); font-size: 1.1rem; font-weight: 900; }
+    .fact strong { display: block; font-size: .9rem; }
+    .fact span { display: block; color: var(--muted); font-size: .78rem; }
+
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 72px; }
+    .map-card { position: relative; min-height: 390px; overflow: hidden; border-radius: var(--radius); background: #edf4e9; }
+    .map-card::before { position: absolute; content: ""; inset: 0; opacity: .75; background-image: linear-gradient(30deg, transparent 47%, rgba(8,120,70,.15) 48%, rgba(8,120,70,.15) 49%, transparent 50%), linear-gradient(150deg, transparent 47%, rgba(217,46,53,.13) 48%, rgba(217,46,53,.13) 49%, transparent 50%); background-size: 62px 62px; }
+    .map-illustration { position: absolute; inset: 0; display: grid; place-items: center; }
+    .map-shape { width: 63%; max-width: 260px; aspect-ratio: .79; display: grid; place-items: center; clip-path: polygon(37% 0, 78% 8%, 100% 30%, 86% 54%, 92% 78%, 57% 100%, 30% 83%, 4% 76%, 13% 48%, 0 25%); background: linear-gradient(145deg, #0d8c50, #075c38); color: white; text-align: center; filter: drop-shadow(0 15px 20px rgba(13,67,38,.22)); }
+    .map-label { padding: 30px; font-weight: 800; }
+    .map-label span { display: block; margin-top: 5px; color: #cce4d4; font-size: .68rem; font-weight: 600; }
+    .map-pin { position: absolute; top: 35%; left: 52%; width: 15px; height: 15px; border: 4px solid white; border-radius: 50% 50% 50% 0; background: var(--red); transform: rotate(-45deg); box-shadow: 0 2px 6px #355; }
+    .map-caption { position: absolute; right: 18px; bottom: 17px; left: 18px; display: flex; justify-content: space-between; gap: 12px; padding: 13px 15px; border: 1px solid rgba(255,255,255,.8); border-radius: 9px; background: rgba(255,255,255,.9); font-size: .76rem; }
+    .map-caption strong { color: var(--green-dark); }
+    .about-copy .eyebrow { margin-bottom: 16px; }
+    .about-copy h2 { margin-bottom: 20px; }
+    .about-copy > p { color: var(--muted); }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 25px 0 29px; }
+    .value { display: flex; align-items: flex-start; gap: 11px; }
+    .check { display: grid; width: 23px; height: 23px; flex: 0 0 auto; place-items: center; border-radius: 50%; background: var(--green-soft); color: var(--green); font-size: .76rem; font-weight: 900; }
+    .value strong { display: block; font-size: .88rem; }
+    .value span { display: block; color: var(--muted); font-size: .76rem; }
+
+    .soft-section { background: var(--cream); }
+    .executive-showcase { display: grid; grid-template-columns: 1.1fr .9fr; gap: 22px; margin-bottom: 26px; }
+    .executive-feature { position: relative; overflow: hidden; display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 24px; border: 1px solid rgba(1,100,54,.15); border-radius: 18px; background: linear-gradient(145deg, #fff, #f2f9f4); box-shadow: 0 16px 30px rgba(13,67,38,.06); }
+    .executive-feature::before { position: absolute; inset: auto -40px -50px auto; width: 180px; height: 180px; border: 1px solid rgba(1,100,54,.1); border-radius: 50%; content: ""; }
+    .executive-feature-portrait { position: relative; z-index: 1; height: 240px; display: grid; place-items: center; border-radius: 16px; background: linear-gradient(145deg, #deefdf, #d7ebdc); }
+    .executive-feature-portrait .portrait-mark { width: 108px; height: 108px; font-size: 2rem; }
+    .executive-feature-content { position: relative; z-index: 1; }
+    .executive-feature-kicker { display: inline-block; margin-bottom: 8px; padding: 5px 10px; border-radius: 999px; background: rgba(1,100,54,.08); color: var(--green-dark); font-size: .72rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .executive-feature-content h3 { margin: 0 0 6px; font-size: clamp(1.4rem, 2vw, 2.1rem); }
+    .executive-feature-content .role { margin-bottom: 12px; color: var(--green); font-size: .82rem; font-weight: 800; letter-spacing: .04em; }
+    .executive-feature-content p { margin-bottom: 14px; color: var(--muted); line-height: 1.7; }
+    .executive-feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; margin: 0; padding-left: 18px; color: var(--ink); font-size: .8rem; line-height: 1.7; }
+    .executive-navigation { display: flex; justify-content: center; align-items: center; gap: 10px; }
+    .executive-nav-btn { border: 1px solid rgba(1,100,54,.2); border-radius: 10px; background: white; color: var(--green-dark); font-weight: 800; cursor: pointer; }
+    .executive-nav-btn:hover { background: var(--green-soft); }
+    .executive-nav-btn.prev, .executive-nav-btn.next { padding: 10px 16px; }
+    .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 17px; }
+    .cards.executive-people {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      opacity: 1;
+      transform: none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .cards.executive-people.show-list {
+      display: grid;
+      opacity: 1;
+      transform: none;
+    }
+    .person-card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; transition: transform .2s, box-shadow .2s; }
+    .person-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .executive-profile { border-color: rgba(1,100,54,.18); }
+    .executive-profile.is-active { box-shadow: 0 18px 34px rgba(13,67,38,.10); border-color: rgba(1,100,54,.36); }
+    .executive-profile-button { width: 100%; padding: 0; border: 0; background: transparent; text-align: left; cursor: pointer; }
+    .portrait { position: relative; height: 190px; display: grid; place-items: center; overflow: hidden; background: linear-gradient(145deg, #e8f3eb, #d6e8dc); }
+    .portrait::before { position: absolute; width: 135px; height: 135px; top: 25px; border-radius: 50%; background: rgba(8,120,70,.10); content: ""; }
+    .portrait::after { position: absolute; width: 150px; height: 90px; bottom: -34px; border-radius: 55% 55% 0 0; background: rgba(8,120,70,.13); content: ""; }
+    .portrait-mark { position: relative; z-index: 1; width: 76px; height: 76px; display: grid; place-items: center; border: 4px solid white; border-radius: 50%; background: var(--green); color: white; font-size: 1.25rem; font-weight: 900; }
+    .person-info { padding: 17px; }
+    .person-info h3 { margin-bottom: 5px; font-size: 1rem; letter-spacing: -.02em; }
+    .person-info p { margin-bottom: 10px; color: var(--green); font-size: .77rem; font-weight: 800; }
+    .person-info small { color: var(--muted); font-size: .73rem; }
+    .person-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 10px; }
+    .person-role-tag { display: inline-flex; padding: 5px 8px; border-radius: 999px; background: rgba(1,100,54,.08); color: var(--green-dark); font-size: .7rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+    .person-toggle { color: var(--green); font-size: .72rem; font-weight: 800; }
+    .person-details { max-height: 0; overflow: hidden; transition: max-height .25s ease, opacity .2s ease; opacity: 0; }
+    .executive-profile.is-active .person-details { max-height: 520px; opacity: 1; }
+    .person-details-content { padding: 0 17px 17px; }
+    .person-details-content h4 { margin: 0 0 8px; font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
+    .person-details-content p { margin-bottom: 12px; color: var(--muted); font-size: .8rem; line-height: 1.6; }
+    .person-details-content ul { margin: 0; padding-left: 18px; color: var(--ink); font-size: .8rem; line-height: 1.7; }
+    .cards-footer { display: flex; justify-content: center; margin-top: 31px; }
+    .placeholder-note { color: var(--muted); font-size: .79rem; text-align: center; }
+
+    .leader-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .leader-card { position: relative; min-height: 300px; display: flex; align-items: flex-end; overflow: hidden; padding: 28px; border-radius: var(--radius); background: var(--green-dark); color: white; }
+    .leader-card:nth-child(2) { background: #111713; }
+    .leader-card::before { position: absolute; top: -55px; right: -35px; width: 230px; height: 230px; border: 1px solid rgba(255,255,255,.17); border-radius: 50%; content: ""; box-shadow: 0 0 0 35px rgba(255,255,255,.035), 0 0 0 70px rgba(255,255,255,.025); }
+    .leader-card::after { position: absolute; right: 15%; bottom: -80px; width: 180px; height: 210px; border-radius: 90px 90px 20px 20px; background: rgba(255,255,255,.08); content: ""; }
+    .leader-content { position: relative; z-index: 1; max-width: 360px; }
+    .leader-content .eyebrow { margin-bottom: 12px; color: #cae7d3; }
+    .leader-content h3 { margin-bottom: 9px; font-size: 1.8rem; }
+    .leader-content p { margin-bottom: 0; color: rgba(255,255,255,.75); font-size: .88rem; }
+    .leader-card .placeholder { position: absolute; top: 24px; right: 24px; padding: 7px 10px; border: 1px solid rgba(255,255,255,.3); border-radius: 30px; color: rgba(255,255,255,.76); font-size: .68rem; }
+
+    .news-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 18px; }
+    .news-card { display: flex; min-height: 265px; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+    .news-card:first-child { background: var(--green); color: white; }
+    .news-card:first-child .news-meta, .news-card:first-child p { color: rgba(255,255,255,.77); }
+    .news-kind { align-self: flex-start; margin-bottom: 20px; padding: 5px 9px; border-radius: 4px; background: rgba(8,120,70,.08); color: var(--green); font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .news-card:first-child .news-kind { background: rgba(255,255,255,.15); color: white; }
+    .news-card h3 { margin-bottom: 10px; font-size: 1.22rem; }
+    .news-card p { margin-bottom: 16px; color: var(--muted); font-size: .83rem; }
+    .news-meta { margin-top: auto; color: var(--muted); font-size: .72rem; }
+    .update-note { margin: 20px 0 0; color: var(--muted); font-size: .77rem; text-align: center; }
+
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .project-card { padding: 24px; border: 1px solid var(--line); border-radius: 12px; background: white; }
+    .project-icon { width: 48px; height: 48px; display: grid; place-items: center; margin-bottom: 20px; border-radius: 12px; background: #fcebed; color: var(--red); font-size: 1.15rem; font-weight: 900; }
+    .project-card:nth-child(2) .project-icon { background: var(--green-soft); color: var(--green); }
+    .project-card:nth-child(3) .project-icon { background: #fcebed; color: var(--red); }
+    .project-card h3 { margin-bottom: 9px; font-size: 1.1rem; }
+    .project-card p { margin-bottom: 0; color: var(--muted); font-size: .83rem; }
+
+    .gallery-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; grid-template-rows: 190px 190px; gap: 14px; }
+    .gallery-tile { position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 11px; background: linear-gradient(145deg, #e5f1e8, #c9e2d1); }
+    .gallery-tile:nth-child(2), .gallery-tile:nth-child(5) { background: linear-gradient(145deg, #f8eeee, #f1d7d9); }
+    .gallery-tile:nth-child(3), .gallery-tile:nth-child(4) { background: linear-gradient(145deg, #e5f1e8, #c9e2d1); }
+    .gallery-tile:first-child { grid-row: span 2; }
+    .gallery-art { width: 70px; height: 70px; display: grid; place-items: center; border: 1px solid rgba(8,120,70,.2); border-radius: 50%; color: var(--green); font-size: 1.45rem; }
+    .gallery-label { position: absolute; right: 0; bottom: 0; left: 0; padding: 30px 15px 13px; background: linear-gradient(transparent, rgba(14,32,21,.58)); color: white; font-size: .8rem; font-weight: 750; }
+    .gallery-placeholder { margin: 17px 0 0; color: var(--muted); font-size: .76rem; text-align: center; }
+    .field-report-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .field-report-card { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: white; }
+    .field-report-photo { width: 100%; height: 190px; object-fit: cover; background: var(--green-soft); }
+    .field-report-photo-placeholder { height: 150px; display: grid; place-items: center; background: linear-gradient(145deg, #eaf5ee, #d6e8dc); color: var(--green); font-size: 2rem; }
+    .field-report-content { padding: 18px; }
+    .field-report-type { display: inline-flex; margin-bottom: 10px; padding: 5px 8px; border-radius: 4px; background: var(--green-soft); color: var(--green-dark); font-size: .65rem; font-weight: 850; letter-spacing: .06em; text-transform: uppercase; }
+    .field-report-content h3 { margin-bottom: 8px; font-size: 1.08rem; }
+    .field-report-content p { margin-bottom: 12px; color: var(--muted); font-size: .82rem; }
+    .field-report-meta { display: flex; flex-wrap: wrap; gap: 5px 12px; color: var(--muted); font-size: .7rem; }
+
+    .join-band { position: relative; overflow: hidden; padding: 65px 0; background: var(--green-dark); color: white; }
+    .join-band::after { position: absolute; top: -170px; right: 5%; width: 400px; height: 400px; border: 1px solid rgba(255,255,255,.14); border-radius: 50%; content: ""; box-shadow: 0 0 0 50px rgba(255,255,255,.025), 0 0 0 100px rgba(255,255,255,.025); }
+    .join-band-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .join-band h2 { max-width: 650px; margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3rem); }
+    .join-band p { margin-bottom: 0; color: rgba(255,255,255,.76); }
+    .join-band .btn { flex: 0 0 auto; background: white; color: var(--green-dark); }
+    .join-band .btn:hover { background: #e9f2ec; }
+
+    .join-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 55px; align-items: start; }
+    .join-copy p { color: var(--muted); }
+    .join-copy .eyebrow { margin-bottom: 14px; }
+    .join-form { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 26px; border: 1px solid var(--line); border-radius: 13px; background: white; box-shadow: 0 8px 30px rgba(15,54,35,.05); }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-size: .78rem; font-weight: 750; }
+    .field input, .field select, .field textarea { width: 100%; min-height: 45px; padding: 10px 12px; border: 1px solid #d9e1db; border-radius: 6px; background: white; color: var(--ink); }
+    .field textarea { min-height: 100px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid rgba(8,120,70,.25); border-color: var(--green); }
+    .privacy-note { grid-column: 1 / -1; margin: -2px 0 0; color: var(--muted); font-size: .7rem; }
+    .form-status { grid-column: 1 / -1; min-height: 20px; margin: 0; color: var(--green-dark); font-size: .8rem; }
+    .join-form .btn { grid-column: 1 / -1; justify-self: start; }
+
+    .contact-section { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 25px; }
+    .contact-details { display: grid; gap: 12px; }
+    .contact-item { display: flex; gap: 14px; padding: 17px; border: 1px solid var(--line); border-radius: 10px; background: white; }
+    .contact-item .fact-icon { width: 38px; height: 38px; border-radius: 10px; }
+    .contact-item strong { display: block; margin-bottom: 3px; font-size: .83rem; }
+    .contact-item span, .contact-item a { color: var(--muted); font-size: .79rem; text-decoration: none; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; padding: 22px; border: 1px solid var(--line); border-radius: 11px; background: white; }
+    .map-frame { grid-column: 1 / -1; min-height: 230px; overflow: hidden; border: 0; border-radius: 9px; background: #e9efe9; }
+    .map-link { grid-column: 1 / -1; color: var(--green); font-size: .8rem; font-weight: 750; text-decoration: none; }
+
+    .footer { padding: 52px 0 20px; background: #11251a; color: white; }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 45px; padding-bottom: 35px; }
+    .footer .brand-name { color: white; }
+    .footer .brand-sub { color: #a7b5ab; }
+    .footer-copy { max-width: 340px; margin: 17px 0 0; color: #b6c4ba; font-size: .82rem; }
+    .footer h3 { margin: 0 0 15px; font-size: .9rem; letter-spacing: 0; }
+    .footer-links { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .footer-links a { color: #b6c4ba; font-size: .8rem; text-decoration: none; }
+    .footer-links a:hover { color: white; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); color: #9baa9f; font-size: .72rem; }
+    .whatsapp {
+      position: fixed; z-index: 30; right: 20px; bottom: 20px; width: 56px; height: 56px;
+      display: grid; place-items: center; border: 3px solid white; border-radius: 50%; background: #20b968;
+      color: white; font-size: 1.35rem; font-weight: 900; text-decoration: none; box-shadow: 0 8px 24px rgba(16,54,34,.25);
+    }
+    .whatsapp:hover { transform: translateY(-2px); }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    @media (max-width: 1000px) {
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: .7rem; }
+      .brand { min-width: 190px; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 40px; }
+    }
+    @media (max-width: 780px) {
+      .wrap { width: min(var(--content), calc(100% - 34px)); }
+      .topline-inner { justify-content: center; min-height: 34px; }
+      .topline-right { display: none; }
+      .nav-row { min-height: 68px; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        position: absolute; top: 100%; right: 0; left: 0; display: none; align-items: stretch;
+        gap: 0; padding: 8px 17px 17px; border-bottom: 1px solid var(--line); background: white;
+        box-shadow: 0 12px 18px rgba(13,50,31,.08);
+      }
+      .nav-links.open { display: flex; flex-direction: column; }
+      .nav-links a { display: block; padding: 11px 4px; font-size: .88rem; }
+      .nav-links .nav-join { display: inline-flex; margin-top: 7px; padding-inline: 15px; }
+      .hero, .hero-inner { min-height: 0; }
+      .hero-inner { grid-template-columns: 1fr; gap: 5px; padding-block: 62px 66px; }
+      .hero h1 { max-width: 600px; font-size: clamp(3rem, 10vw, 4.7rem); }
+      .hero-visual { min-height: 290px; }
+      .hero-orbit { width: 285px; }
+      .crest { width: 158px; height: 205px; border-radius: 17px; }
+      .crest-logo { width: 138px; height: 190px; }
+      .tag-one { right: 10%; }
+      .tag-two { left: 10%; }
+      .slider-controls { right: 17px; bottom: 16px; }
+      .facts-grid { grid-template-columns: 1fr; padding-block: 8px; }
+      .fact, .fact:first-child { padding: 12px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .fact:last-child { border-bottom: 0; }
+      .section { padding: 70px 0; }
+      .about-grid, .join-grid, .contact-grid { grid-template-columns: 1fr; gap: 35px; }
+      .map-card { min-height: 330px; }
+      .leader-grid { grid-template-columns: 1fr; }
+      .news-grid { grid-template-columns: 1fr 1fr; }
+      .field-report-grid { grid-template-columns: 1fr 1fr; }
+      .news-card:first-child { grid-column: 1 / -1; }
+      .project-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 520px) {
+      .wrap { width: calc(100% - 30px); }
+      .brand { min-width: 0; gap: 8px; }
+      .brand-mark { width: 39px; height: 43px; }
+      .brand-mark img { width: 29px; height: 40px; }
+      .brand-name { font-size: .68rem; }
+      .brand-sub { font-size: .55rem; }
+      .hero-inner { padding-top: 49px; }
+      .hero h1 { font-size: 3rem; }
+      .hero-copy > p { font-size: .96rem; }
+      .hero-visual { min-height: 260px; }
+      .hero-orbit { width: 245px; }
+      .crest { width: 132px; height: 174px; }
+      .crest-logo { width: 115px; height: 160px; }
+      .visual-tag { padding: 8px 10px; }
+      .tag-one { right: 0; }
+      .tag-two { left: 0; }
+      .section { padding: 58px 0; }
+      .values { grid-template-columns: 1fr; }
+      .cards { gap: 11px; }
+      .portrait { height: 145px; }
+      .person-info { padding: 13px; }
+      .news-grid, .project-grid, .field-report-grid { grid-template-columns: 1fr; }
+      .news-card:first-child { grid-column: auto; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 145px); gap: 9px; }
+      .gallery-tile:first-child { grid-row: span 2; }
+      .join-band-inner { align-items: flex-start; flex-direction: column; }
+      .join-form, .contact-form { grid-template-columns: 1fr; padding: 19px; }
+      .field.full, .privacy-note, .form-status, .join-form .btn, .map-frame, .map-link { grid-column: 1; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+      .footer-bottom { flex-direction: column; gap: 6px; }
+      .whatsapp { right: 14px; bottom: 14px; width: 51px; height: 51px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="topline">
+    <div class="wrap topline-inner">
+      <p>Lower West Akim Constituency · 9th Executive</p>
+      <div class="topline-right"><span class="top-dot" aria-hidden="true"></span><a href="#join">Together, we move forward</a></div>
+    </div>
+  </div>
+  <header class="header">
+    <div class="wrap nav-row">
+      <a class="brand" href="#home" aria-label="Lower West Akim NDC home">
+        <span class="brand-mark"><img src="/assets/ndc-logo.svg" alt="National Democratic Congress logo"></span>
+        <span><span class="brand-name">Lower West Akim</span><span class="brand-sub">Constituency NDC</span></span>
+      </a>
+      <div class="nav-tools">
+        <button class="settings-toggle" id="settings-open" type="button" aria-label="Open accessibility settings" aria-haspopup="dialog" title="Accessibility settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2.8a.95.95 0 0 1 .86.54l.28 1.15 1.17.42a.95.95 0 0 1 .58 1.23l-.5 1.17 1.04 1.04.91.91a.95.95 0 0 1 0 1.34l-.91.91-1.04 1.04.5 1.17a.95.95 0 0 1-.58 1.23l-1.17.42-.28 1.15a.95.95 0 0 1-.86.54h-1.72a.95.95 0 0 1-.86-.54l-.28-1.15-1.17-.42a.95.95 0 0 1-.58-1.23l.5-1.17-1.04-1.04-.91-.91a.95.95 0 0 1 0-1.34l.91-.91 1.04-1.04-.5-1.17a.95.95 0 0 1 .58-1.23l1.17-.42.28-1.15A.95.95 0 0 1 12 2.8Z"></path>
+            <circle cx="12" cy="12" r="3.25"></circle>
+          </svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation">☰</button>
+      </div>
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="main-navigation">
+          <li><a href="#about">About</a></li>
+          <li><a href="#executive">Executive</a></li>
+          <li><a href="#leadership">MP &amp; MCE</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="staff-link" href="/admin/staff-access.php">Staff sign in</a></li>
+          <li><a class="btn nav-join" href="#join">Join Us <span class="arrow">→</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <dialog class="accessibility-dialog" id="accessibility-dialog" aria-labelledby="settings-title" aria-describedby="settings-description">
+    <div class="settings-content">
+      <div class="settings-heading">
+        <div><h2 id="settings-title">Accessibility settings</h2><p id="settings-description">Adjust how this website looks and moves on this device.</p></div>
+        <button class="settings-close" id="settings-close" type="button" aria-label="Close accessibility settings">×</button>
+      </div>
+      <fieldset class="settings-group">
+        <legend>Display</legend>
+        <label class="settings-size" for="text-size">Text size
+          <select id="text-size" name="text-size">
+            <option value="normal">Standard</option>
+            <option value="large">Large</option>
+            <option value="larger">Largest</option>
+          </select>
+        </label>
+        <label class="settings-size" for="line-height">Line spacing
+          <select id="line-height" name="line-height">
+            <option value="normal">Normal</option>
+            <option value="comfortable">Comfortable</option>
+            <option value="spacious">Spacious</option>
+          </select>
+        </label>
+        <label class="settings-option"><input id="high-contrast" type="checkbox"> High contrast</label>
+        <label class="settings-option"><input id="underline-links" type="checkbox"> Always underline links</label>
+      </fieldset>
+      <fieldset class="settings-group">
+        <legend>Reading</legend>
+        <label class="settings-option"><input id="reading-mode" type="checkbox"> Reading mode</label>
+        <label class="settings-option"><input id="large-click-targets" type="checkbox"> Larger touch controls</label>
+      </fieldset>
+      <fieldset class="settings-group">
+        <legend>Motion</legend>
+        <label class="settings-option"><input id="reduced-motion" type="checkbox"> Reduce animations and movement</label>
+      </fieldset>
+      <div class="settings-actions">
+        <button class="settings-reset" id="settings-reset" type="button">Reset to defaults</button>
+        <button class="btn" id="settings-done" type="button">Done</button>
+      </div>
+      <p class="settings-status" id="settings-status" role="status" aria-live="polite"></p>
+    </div>
+  </dialog>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="home" aria-label="Welcome">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">One constituency. One shared future.</span>
+          <h1 id="hero-title">Unity in action.<br><span class="accent">Service for all.</span></h1>
+          <p id="hero-text">Welcome to the official home of the Lower West Akim Constituency NDC 9th Executive. We are building a stronger constituency through listening, service and collective action.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#about">Discover our constituency <span class="arrow">→</span></a>
+            <a class="btn btn-light" href="#news">Latest updates</a>
+          </div>
+          <div class="hero-note"><span class="note-rule"></span><span><strong>Lower West Akim</strong> · Eastern Region, Ghana</span></div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orbit"></div>
+          <div class="crest"><img class="crest-logo" src="/assets/ndc-logo.svg" alt="National Democratic Congress Ghana emblem"></div>
+          <div class="visual-tag tag-one"><b>Our 9th Executive</b><span>United in service</span></div>
+          <div class="visual-tag tag-two"><b>Asamankese</b><span>Our constituency home</span></div>
+        </div>
+      </div>
+      <div class="slider-controls" aria-label="Welcome message controls">
+        <button type="button" id="slide-prev" aria-label="Previous message">‹</button>
+        <span class="slide-count" id="slide-count" aria-live="polite">01 / 03</span>
+        <button type="button" id="slide-next" aria-label="Next message">›</button>
+      </div>
+    </section>
+
+    <div class="quick-facts" aria-label="Our priorities">
+      <div class="wrap facts-grid">
+        <div class="fact"><span class="fact-icon" aria-hidden="true">◎</span><div><strong>Listening leadership</strong><span>Connected to every community</span></div></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true">✦</span><div><strong>People-centred service</strong><span>Working together for progress</span></div></div>
+        <div class="fact"><span class="fact-icon" aria-hidden="true">↗</span><div><strong>Stronger branches</strong><span>Organised, active and united</span></div></div>
+      </div>
+    </div>
+
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div class="map-card" role="img" aria-label="Illustration marking Asamankese in Lower West Akim">
+          <div class="map-illustration"><div class="map-shape"><div class="map-label">LOWER<br>WEST AKIM<span>Eastern Region · Ghana</span></div></div><span class="map-pin"></span></div>
+          <div class="map-caption"><strong>Our constituency</strong><span>Centred around Asamankese</span></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">About Lower West Akim</span>
+          <h2>Rooted in community.<br>Focused on progress.</h2>
+          <p>Lower West Akim is a constituency in Ghana’s Eastern Region, with Asamankese as its principal town. Our communities, branches and members are the foundation of a movement committed to opportunity, fairness and development.</p>
+          <p>The Constituency NDC brings people together to listen, organise and serve. We honour our shared history while working toward a better future for every resident.</p>
+          <div class="values">
+            <div class="value"><span class="check" aria-hidden="true">✓</span><div><strong>Unity</strong><span>Every voice belongs.</span></div></div>
+            <div class="value"><span class="check" aria-hidden="true">✓</span><div><strong>Accountability</strong><span>Service with integrity.</span></div></div>
+            <div class="value"><span class="check" aria-hidden="true">✓</span><div><strong>Opportunity</strong><span>Progress for our people.</span></div></div>
+            <div class="value"><span class="check" aria-hidden="true">✓</span><div><strong>Grassroots action</strong><span>Strong branches, stronger future.</span></div></div>
+          </div>
+          <a class="btn btn-outline" href="#executive">Meet the 9th Executive <span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="executive">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Leadership &amp; service</span>
+          <h2>Our 9th Executive</h2>
+          <p>Meet the team entrusted with organising, representing and serving NDC members across Lower West Akim.</p>
+        </div>
+        <div class="executive-showcase">
+          <div class="executive-feature" id="executive-feature">
+            <div class="executive-feature-portrait">
+              <span class="portrait-mark" id="executive-feature-mark">CH</span>
+            </div>
+            <div class="executive-feature-content">
+              <span class="executive-feature-kicker">Executive spotlight</span>
+              <h3 id="executive-feature-name">Executive Member</h3>
+              <div class="role" id="executive-feature-role">Constituency Chairman</div>
+              <p id="executive-feature-summary">Our leadership team works to protect the interests of members, strengthen branch activity and build a stronger Lower West Akim.</p>
+              <ul class="executive-feature-list" id="executive-feature-list"></ul>
+            </div>
+          </div>
+          <div class="executive-navigation" aria-label="Executive profile navigation">
+            <button class="executive-nav-btn prev" id="executive-prev" type="button">← Previous</button>
+            <button class="executive-nav-btn next" id="executive-next" type="button">Next →</button>
+          </div>
+        </div>
+        <div class="cards executive-people" id="executive-cards"></div>
+        <div class="cards-footer"><p class="placeholder-note">Official executive profiles and photographs will be published here once approved.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="leadership">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Representing our people</span>
+          <h2>Our MP &amp; MCE</h2>
+          <p>Learn about the constituency’s parliamentary and local government leadership.</p>
+        </div>
+        <div class="leader-grid">
+          <article class="leader-card"><span class="placeholder">Profile to be provided</span><div class="leader-content"><span class="eyebrow">Member of Parliament</span><h3>Our MP</h3><p>Profile, message and official portrait will be published here once approved by the constituency.</p></div></article>
+          <article class="leader-card"><span class="placeholder">Profile to be provided</span><div class="leader-content"><span class="eyebrow">Municipal Chief Executive</span><h3>Our MCE</h3><p>Profile, message and official portrait will be published here once approved by the constituency.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="news">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">From the constituency</span>
+          <h2>News &amp; events</h2>
+          <p>Announcements, community updates and upcoming activities from Lower West Akim.</p>
+        </div>
+        <div class="news-grid">
+          <article class="news-card"><span class="news-kind">Welcome</span><h3>A new home for Lower West Akim NDC</h3><p>Visit our official constituency website for updates, community initiatives and ways to take part in our work.</p><span class="news-meta">9th Executive · Official update</span></article>
+          <article class="news-card"><span class="news-kind">Community</span><h3>Community updates</h3><p>Details of constituency engagements and branch activities will be shared here.</p><span class="news-meta">Updates coming soon</span></article>
+          <article class="news-card"><span class="news-kind">Events</span><h3>Upcoming events</h3><p>Check back for meetings, outreach activities and important constituency dates.</p><span class="news-meta">Updates coming soon</span></article>
+        </div>
+        <p class="update-note">Approved news and event updates are managed through the secure staff dashboard.</p>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Our work, our future</span>
+          <h2>Projects &amp; achievements</h2>
+          <p>A place to share verified progress and community initiatives across the constituency.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card"><span class="project-icon" aria-hidden="true">⌂</span><h3>Community development</h3><p>Updates on local infrastructure, community support and development priorities will be published here.</p></article>
+          <article class="project-card"><span class="project-icon" aria-hidden="true">✚</span><h3>People &amp; wellbeing</h3><p>News about outreach, health, education and initiatives supporting our residents.</p></article>
+          <article class="project-card"><span class="project-icon" aria-hidden="true">↗</span><h3>Opportunity for all</h3><p>Stories of skills, livelihoods and programmes creating new opportunities in Lower West Akim.</p></article>
+        </div>
+        <p class="update-note">Project details and achievement records will be added when provided and verified.</p>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="field-reports">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">On the ground</span>
+          <h2>Executive activity reports</h2>
+          <p>Updates from constituency executives on community activities and project progress. Only reports approved by the Chairman appear here.</p>
+        </div>
+        <div class="field-report-grid" id="field-report-grid">
+          <article class="field-report-card"><div class="field-report-photo-placeholder" aria-hidden="true">✦</div><div class="field-report-content"><span class="field-report-type">Reports</span><h3>Community work, shared openly</h3><p>Approved activity reports and project updates from our constituency executives will appear here.</p></div></article>
+        </div>
+        <p class="update-note">Reports are reviewed before publication. Supporting documents and pending submissions are never shown publicly.</p>
+      </div>
+    </section>
+
+    <section class="section soft-section" id="gallery">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Life in our constituency</span>
+          <h2>Gallery</h2>
+          <p>Moments from our community, branch engagements and constituency activities.</p>
+        </div>
+        <div class="gallery-grid" aria-label="Gallery placeholders">
+          <div class="gallery-tile"><span class="gallery-art" aria-hidden="true">✦</span><span class="gallery-label">Community in action</span></div>
+          <div class="gallery-tile"><span class="gallery-art" aria-hidden="true">◎</span><span class="gallery-label">Branch engagement</span></div>
+          <div class="gallery-tile"><span class="gallery-art" aria-hidden="true">⌂</span><span class="gallery-label">Our constituency</span></div>
+          <div class="gallery-tile"><span class="gallery-art" aria-hidden="true">↗</span><span class="gallery-label">Working together</span></div>
+          <div class="gallery-tile"><span class="gallery-art" aria-hidden="true">✧</span><span class="gallery-label">Events &amp; meetings</span></div>
+        </div>
+        <p class="gallery-placeholder">Official event photos and videos will appear here when supplied.</p>
+      </div>
+    </section>
+
+    <section class="join-band">
+      <div class="wrap join-band-inner">
+        <div><h2>Our strength is in our people.</h2><p>Be part of the conversation and help build a stronger Lower West Akim.</p></div>
+        <a class="btn" href="#join">Get involved <span class="arrow">→</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="join">
+      <div class="wrap join-grid">
+        <div class="join-copy">
+          <span class="eyebrow">Stand with us</span>
+          <h2>Join the movement.</h2>
+          <p>Share your contact details and branch so the constituency team can follow up with you about membership and local activities.</p>
+          <p><strong>Your privacy matters.</strong> This preview form does not send or store information. A secure, approved membership service must be connected before collecting real membership details.</p>
+        </div>
+        <form class="join-form" id="join-form">
+          <div class="field"><label for="member-name">Full name *</label><input id="member-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="member-phone">Phone number *</label><input id="member-phone" name="phone" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="member-town">Town / branch *</label><input id="member-town" name="town" required></div>
+          <div class="field"><label for="member-voter-id">Voter ID</label><input id="member-voter-id" name="voterId" autocomplete="off" aria-describedby="voter-note"></div>
+          <p class="privacy-note" id="voter-note">Voter ID is sensitive personal information. Do not enter real details in this preview; a secure collection process must be approved first.</p>
+          <button class="btn" type="submit">Register your interest <span class="arrow">→</span></button>
+          <p class="form-status" id="join-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">We’re here to listen</span>
+          <h2>Contact us</h2>
+          <p>Reach the Lower West Akim Constituency NDC office in Asamankese.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-details">
+            <div class="contact-item"><span class="fact-icon" aria-hidden="true">⌖</span><div><strong>Constituency office</strong><span>Office address, Asamankese<br>Address details to be provided</span></div></div>
+            <div class="contact-item"><span class="fact-icon" aria-hidden="true">☎</span><div><strong>Call us</strong><span>Official phone number to be provided</span></div></div>
+            <div class="contact-item"><span class="fact-icon" aria-hidden="true">✉</span><div><strong>Email</strong><span>Official email address to be provided</span></div></div>
+            <div class="contact-item"><span class="fact-icon" aria-hidden="true">f</span><div><strong>Follow &amp; connect</strong><span>Facebook page and WhatsApp Channel links to be provided</span></div></div>
+          </div>
+          <form class="contact-form" id="contact-form">
+            <div class="field"><label for="contact-name">Your name *</label><input id="contact-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="contact-email">Email address *</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field full"><label for="contact-message">How can we help? *</label><textarea id="contact-message" name="message" required></textarea></div>
+            <button class="btn" type="submit">Prepare message <span class="arrow">→</span></button>
+            <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+            <iframe class="map-frame" title="Map showing Asamankese, Ghana" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Asamankese%2C%20Ghana&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Asamankese%2C+Ghana" target="_blank" rel="noopener noreferrer">Open Asamankese in Google Maps ↗</a>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#home"><span class="brand-mark"><img src="/assets/ndc-logo.svg" alt=""></span><span><span class="brand-name">Lower West Akim</span><span class="brand-sub">Constituency NDC</span></span></a>
+          <p class="footer-copy">The official online home of the Lower West Akim Constituency NDC 9th Executive. Unity, service and progress for all.</p>
+        </div>
+        <div><h3>Explore</h3><ul class="footer-links"><li><a href="#about">About us</a></li><li><a href="#executive">Our 9th Executive</a></li><li><a href="#news">News &amp; events</a></li><li><a href="#projects">Projects &amp; achievements</a></li><li><a href="#field-reports">Executive activity reports</a></li></ul></div>
+        <div><h3>Get involved</h3><ul class="footer-links"><li><a href="#join">Join us</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact the office</a></li><li><a href="/admin/staff-access.php">Staff sign in</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Lower West Akim Constituency NDC. All rights reserved.</span><span>Official constituency information</span></div>
+    </div>
+  </footer>
+  <a class="whatsapp" id="whatsapp-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp" title="WhatsApp contact details to be configured">WA</a>
+
+  <script>
+    const slides = [
+      {
+        title: 'Unity in action.<br><span class="accent">Service for all.</span>',
+        text: 'Welcome to the official home of the Lower West Akim Constituency NDC 9th Executive. We are building a stronger constituency through listening, service and collective action.'
+      },
+      {
+        title: 'Stronger branches.<br><span class="accent">Stronger future.</span>',
+        text: 'Our branches are the heartbeat of the constituency. Together, we can organise, share ideas and create meaningful opportunities in every community.'
+      },
+      {
+        title: 'One community.<br><span class="accent">One shared future.</span>',
+        text: 'From Asamankese to every corner of Lower West Akim, we believe progress begins when we listen, work together and put people first.'
+      }
+    ];
+    let activeSlide = 0;
+    const title = document.getElementById('hero-title');
+    const text = document.getElementById('hero-text');
+    const count = document.getElementById('slide-count');
+    function showSlide(index) {
+      activeSlide = (index + slides.length) % slides.length;
+      title.innerHTML = slides[activeSlide].title;
+      text.textContent = slides[activeSlide].text;
+      count.textContent = `0${activeSlide + 1} / 0${slides.length}`;
+    }
+    document.getElementById('slide-prev').addEventListener('click', () => showSlide(activeSlide - 1));
+    document.getElementById('slide-next').addEventListener('click', () => showSlide(activeSlide + 1));
+    let slideTimer;
+
+    const settingsDialog = document.getElementById('accessibility-dialog');
+    const settingsOpen = document.getElementById('settings-open');
+    const settingsClose = document.getElementById('settings-close');
+    const settingsDone = document.getElementById('settings-done');
+    const settingsStatus = document.getElementById('settings-status');
+    const settingsInputs = {
+      textSize: document.getElementById('text-size'),
+      lineHeight: document.getElementById('line-height'),
+      highContrast: document.getElementById('high-contrast'),
+      underlineLinks: document.getElementById('underline-links'),
+      readingMode: document.getElementById('reading-mode'),
+      largeClickTargets: document.getElementById('large-click-targets'),
+      reducedMotion: document.getElementById('reduced-motion'),
+    };
+    const settingsKey = 'lwa-accessibility-settings';
+    const defaultSettings = {
+      textSize: 'normal',
+      lineHeight: 'normal',
+      highContrast: false,
+      underlineLinks: false,
+      readingMode: false,
+      largeClickTargets: false,
+      reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    };
+    let currentSettings = { ...defaultSettings };
+
+    try {
+      const savedSettings = JSON.parse(window.localStorage.getItem(settingsKey) || 'null');
+      if (savedSettings && typeof savedSettings === 'object') {
+        currentSettings = {
+          textSize: ['normal', 'large', 'larger'].includes(savedSettings.textSize) ? savedSettings.textSize : 'normal',
+          lineHeight: ['normal', 'comfortable', 'spacious'].includes(savedSettings.lineHeight) ? savedSettings.lineHeight : 'normal',
+          highContrast: savedSettings.highContrast === true,
+          underlineLinks: savedSettings.underlineLinks === true,
+          readingMode: savedSettings.readingMode === true,
+          largeClickTargets: savedSettings.largeClickTargets === true,
+          reducedMotion: typeof savedSettings.reducedMotion === 'boolean' ? savedSettings.reducedMotion : defaultSettings.reducedMotion,
+        };
+      }
+    } catch (error) {
+      currentSettings = { ...defaultSettings };
+    }
+
+    function applySettings(announce = false) {
+      document.body.dataset.textSize = currentSettings.textSize;
+      document.body.dataset.lineHeight = currentSettings.lineHeight;
+      document.body.dataset.contrast = currentSettings.highContrast ? 'high' : 'normal';
+      document.body.dataset.underlineLinks = String(currentSettings.underlineLinks);
+      document.body.dataset.readingMode = String(currentSettings.readingMode);
+      document.body.dataset.largeControls = String(currentSettings.largeClickTargets);
+      document.body.dataset.reducedMotion = String(currentSettings.reducedMotion);
+      settingsInputs.textSize.value = currentSettings.textSize;
+      settingsInputs.lineHeight.value = currentSettings.lineHeight;
+      settingsInputs.highContrast.checked = currentSettings.highContrast;
+      settingsInputs.underlineLinks.checked = currentSettings.underlineLinks;
+      settingsInputs.readingMode.checked = currentSettings.readingMode;
+      settingsInputs.largeClickTargets.checked = currentSettings.largeClickTargets;
+      settingsInputs.reducedMotion.checked = currentSettings.reducedMotion;
+
+      if (slideTimer) window.clearInterval(slideTimer);
+      if (!currentSettings.reducedMotion) slideTimer = window.setInterval(() => showSlide(activeSlide + 1), 6500);
+
+      try {
+        window.localStorage.setItem(settingsKey, JSON.stringify(currentSettings));
+        if (announce) settingsStatus.textContent = 'Accessibility settings saved on this device.';
+      } catch (error) {
+        if (announce) settingsStatus.textContent = 'Settings applied for this visit but could not be saved in this browser.';
+      }
+    }
+
+    settingsOpen.addEventListener('click', () => {
+      settingsStatus.textContent = '';
+      settingsDialog.showModal();
+    });
+    function closeSettings() { settingsDialog.close(); }
+    settingsClose.addEventListener('click', closeSettings);
+    settingsDone.addEventListener('click', closeSettings);
+    settingsDialog.addEventListener('click', event => {
+      if (event.target === settingsDialog) closeSettings();
+    });
+    settingsDialog.addEventListener('close', () => settingsOpen.focus());
+    Object.values(settingsInputs).forEach(input => input.addEventListener('change', () => {
+      currentSettings = {
+        textSize: settingsInputs.textSize.value,
+        lineHeight: settingsInputs.lineHeight.value,
+        highContrast: settingsInputs.highContrast.checked,
+        underlineLinks: settingsInputs.underlineLinks.checked,
+        readingMode: settingsInputs.readingMode.checked,
+        largeClickTargets: settingsInputs.largeClickTargets.checked,
+        reducedMotion: settingsInputs.reducedMotion.checked,
+      };
+      applySettings(true);
+    }));
+    document.getElementById('settings-reset').addEventListener('click', () => {
+      currentSettings = { ...defaultSettings };
+      applySettings(true);
+    });
+    applySettings();
+
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+    navLinks.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        menuToggle.textContent = '☰';
+      }
+    });
+    document.getElementById('join-form').addEventListener('submit', event => {
+      event.preventDefault();
+      document.getElementById('join-status').textContent = 'Thanks for your interest. This preview is not connected to a secure membership service, so no information has been sent or saved.';
+    });
+    document.getElementById('contact-form').addEventListener('submit', event => {
+      event.preventDefault();
+      document.getElementById('contact-status').textContent = 'Thanks for reaching out. The official email address has not been configured yet, so your message was not sent.';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function makeTextElement(tag, className, value) {
+      const element = document.createElement(tag);
+      element.className = className;
+      element.textContent = value || '';
+      return element;
+    }
+    function renderNews(items) {
+      if (!items.length) return;
+      const container = document.querySelector('.news-grid');
+      container.replaceChildren();
+      items.slice(0, 3).forEach((item, index) => {
+        const card = document.createElement('article');
+        card.className = 'news-card';
+        const kind = makeTextElement('span', 'news-kind', 'News');
+        const heading = makeTextElement('h3', '', item.title);
+        const description = makeTextElement('p', '', item.body);
+        const date = item.eventDate || item.createdAt;
+        const meta = makeTextElement('span', 'news-meta', date ? new Date(date.replace(' ', 'T') + (date.includes('Z') ? '' : 'Z')).toLocaleDateString() : 'Lower West Akim NDC');
+        card.append(kind, heading, description, meta);
+        if (index === 0) card.classList.add('news-featured');
+        container.append(card);
+      });
+    }
+    function renderProjects(items) {
+      if (!items.length) return;
+      const container = document.querySelector('.project-grid');
+      container.replaceChildren();
+      items.slice(0, 6).forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'project-card';
+        card.append(makeTextElement('span', 'project-icon', '↗'));
+        card.append(makeTextElement('h3', '', item.title));
+        card.append(makeTextElement('p', '', item.body));
+        container.append(card);
+      });
+    }
+    const executiveRoles = [
+      {
+        title: 'Executive Member',
+        position: 'Constituency Chairman',
+        short: 'CH',
+        body: 'Leads the constituency leadership team and drives strategy, mobilisation and accountability.',
+        summary: 'The Constituency Chairman provides strategic leadership for the NDC in Lower West Akim and ensures party structures work together for service and growth.',
+        responsibilities: ['Overall constituency leadership', 'Branch coordination and mobilisation', 'Strategic planning and accountability']
+      },
+      {
+        title: 'Executive Member',
+        position: 'Vice Chairman',
+        short: 'VC',
+        body: 'Supports party administration, coordination and leadership continuity across the constituency.',
+        summary: 'The Vice Chairman strengthens operational coordination, backs party leadership and ensures continuity across key constituency initiatives.',
+        responsibilities: ['Leadership support and continuity', 'Committee coordination', 'Community engagement and mobilisation']
+      },
+      {
+        title: 'Executive Member',
+        position: 'Constituency Secretary',
+        short: 'CS',
+        body: 'Handles documentation, communication flow and the day-to-day administrative rhythm of the executive.',
+        summary: 'The Secretary keeps the executive organised, ensures information is shared clearly and maintains the foundation for effective internal coordination.',
+        responsibilities: ['Executive records and administration', 'Internal communication', 'Meeting follow-up and documentation']
+      },
+      {
+        title: 'Executive Member',
+        position: 'Organiser',
+        short: 'OR',
+        body: 'Coordinates grassroots organising, membership support and branch-level mobilising across communities.',
+        summary: 'The Organiser works at the grassroots to connect communities, strengthen branch structures and keep members active and informed.',
+        responsibilities: ['Membership mobilising', 'Branch support and outreach', 'Grassroots coordination']
+      },
+      {
+        title: 'Executive Member',
+        position: 'Women’s Organiser',
+        short: 'WO',
+        body: 'Championing women’s participation, welfare and leadership across the constituency.',
+        summary: 'The Women’s Organiser ensures women are represented, supported and included in party work, community engagement and development initiatives.',
+        responsibilities: ['Women’s mobilisation', 'Leadership inclusion', 'Community support and advocacy']
+      },
+      {
+        title: 'Executive Member',
+        position: 'Youth Organiser',
+        short: 'YO',
+        body: 'Drives youth participation, engagement and leadership development across Lower West Akim.',
+        summary: 'The Youth Organiser connects young people to political participation, volunteering and opportunities that build leadership and community impact.',
+        responsibilities: ['Youth mobilisation', 'Leadership development', 'Youth projects and outreach']
+      },
+      {
+        title: 'Executive Member',
+        position: 'Treasurer',
+        short: 'TR',
+        body: 'Oversees financial accountability, prudent stewardship and transparent resource management.',
+        summary: 'The Treasurer keeps the constituency’s finances transparent, accountable and aligned with approved priorities and party obligations.',
+        responsibilities: ['Financial management', 'Budget oversight', 'Transparent reporting']
+      },
+      {
+        title: 'Executive Member',
+        position: 'Communications Officer',
+        short: 'CO',
+        body: 'Strengthens public information flow, media coordination and constituency messaging.',
+        summary: 'The Communications Officer ensures timely and clear communication across members, communities and stakeholders, helping the party share accurate information.',
+        responsibilities: ['Public messaging', 'Media coordination', 'Information flow and outreach']
+      }
+    ];
+
+    function renderExecutives(items) {
+      const container = document.querySelector('#executive .cards');
+      const source = (items && items.length ? items : executiveRoles).map((item, index) => ({
+        ...executiveRoles[index % executiveRoles.length],
+        ...item,
+        short: item.short || executiveRoles[index % executiveRoles.length].short,
+      }));
+      container.classList.add('executive-people');
+      container.replaceChildren();
+
+      const featureMark = document.getElementById('executive-feature-mark');
+      const featureName = document.getElementById('executive-feature-name');
+      const featureRole = document.getElementById('executive-feature-role');
+      const featureSummary = document.getElementById('executive-feature-summary');
+      const featureList = document.getElementById('executive-feature-list');
+      let activeIndex = 0;
+
+      function updateFeature(index) {
+        activeIndex = (index + source.length) % source.length;
+        const profile = source[activeIndex];
+        const initials = (profile.short || (profile.position || profile.title || 'EX').split(' ').slice(0, 2).map(part => part[0]).join('')).toUpperCase();
+        featureMark.textContent = initials;
+        featureName.textContent = profile.title || 'Executive Member';
+        featureRole.textContent = profile.position || 'Executive';
+        featureSummary.textContent = profile.summary || profile.body || 'Official profile and responsibilities will be added when approved.';
+        featureList.replaceChildren();
+        (profile.responsibilities || ['Community mobilisation', 'Constituency coordination', 'Member engagement']).forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          featureList.append(li);
+        });
+
+          const cards = container.querySelectorAll('.executive-profile');
+        cards.forEach((profileCard, cardIndex) => {
+          const isActive = cardIndex === activeIndex;
+          profileCard.classList.toggle('is-active', isActive);
+          const button = profileCard.querySelector('.executive-profile-button');
+          const toggle = profileCard.querySelector('.person-toggle');
+          if (button) button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+          if (toggle) toggle.textContent = isActive ? 'Hide profile' : 'View profile';
+        });
+
+        container.classList.add('show-list');
+      }
+
+      container.classList.add('show-list');
+
+      document.getElementById('executive-prev').onclick = () => {
+        updateFeature(activeIndex - 1);
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+      document.getElementById('executive-next').onclick = () => {
+        updateFeature(activeIndex + 1);
+        container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+
+      source.slice(0, 16).forEach((item, index) => {
+        const card = document.createElement('article');
+        card.className = 'person-card executive-profile';
+        if (index === 0) card.classList.add('is-active');
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'executive-profile-button';
+        button.setAttribute('aria-expanded', index === 0 ? 'true' : 'false');
+
+        const portrait = document.createElement('div');
+        portrait.className = 'portrait';
+        if (item.image) {
+          const image = document.createElement('img');
+          image.src = item.image;
+          image.alt = '';
+          image.loading = 'lazy';
+          image.style.cssText = 'width:100%;height:100%;object-fit:cover';
+          portrait.append(image);
+        } else {
+          const initials = (item.short || (item.position || item.title || 'EX').split(' ').slice(0, 2).map(part => part[0]).join('')).toUpperCase();
+          portrait.append(makeTextElement('span', 'portrait-mark', initials));
+        }
+
+        const info = document.createElement('div');
+        info.className = 'person-info';
+        info.append(makeTextElement('h3', '', item.title || 'Executive Member'));
+        info.append(makeTextElement('p', '', item.position || 'Executive'));
+        info.append(makeTextElement('small', '', item.body || 'Official profile and photo will be published once approved.'));
+        const meta = document.createElement('div');
+        meta.className = 'person-meta';
+        meta.append(makeTextElement('span', 'person-role-tag', item.position || 'Executive'));
+        meta.append(makeTextElement('span', 'person-toggle', index === 0 ? 'Hide profile' : 'View profile'));
+        info.append(meta);
+        button.append(portrait, info);
+
+        const details = document.createElement('div');
+        details.className = 'person-details';
+        const detailsBody = document.createElement('div');
+        detailsBody.className = 'person-details-content';
+        detailsBody.append(makeTextElement('h4', '', 'Leadership focus'));
+        detailsBody.append(makeTextElement('p', '', item.summary || item.body || 'Official profile and responsibilities will be added when approved.'));
+        const list = document.createElement('ul');
+        (item.responsibilities || ['Community mobilisation', 'Constituency coordination', 'Member engagement']).forEach(responsibility => list.append(makeTextElement('li', '', responsibility)));
+        detailsBody.append(list);
+        details.append(detailsBody);
+
+        button.addEventListener('click', () => updateFeature(index));
+        card.append(button, details);
+        container.append(card);
+      });
+
+      container.classList.add('show-list');
+      updateFeature(0);
+    }
+    function renderGallery(items) {
+      if (!items.length) return;
+      const container = document.querySelector('.gallery-grid');
+      container.replaceChildren();
+      items.slice(0, 5).forEach(item => {
+        const tile = document.createElement('div');
+        tile.className = 'gallery-tile';
+        if (item.image) {
+          const image = document.createElement('img');
+          image.src = item.image;
+          image.alt = item.title;
+          image.loading = 'lazy';
+          image.style.cssText = 'width:100%;height:100%;object-fit:cover';
+          tile.append(image);
+        } else {
+          tile.append(makeTextElement('span', 'gallery-art', '✦'));
+        }
+        tile.append(makeTextElement('span', 'gallery-label', item.title));
+        container.append(tile);
+      });
+    }
+    function renderFieldReports(reports) {
+      if (!reports.length) return;
+      const container = document.getElementById('field-report-grid');
+      container.replaceChildren();
+      reports.slice(0, 6).forEach(report => {
+        const card = document.createElement('article');
+        card.className = 'field-report-card';
+        const photo = document.createElement('img');
+        if (report.photos && report.photos.length) {
+          photo.className = 'field-report-photo';
+          photo.src = report.photos[0];
+          photo.alt = `Approved report: ${report.title}`;
+          photo.loading = 'lazy';
+          card.append(photo);
+        } else {
+          const placeholder = makeTextElement('div', 'field-report-photo-placeholder', '✦');
+          placeholder.setAttribute('aria-hidden', 'true');
+          card.append(placeholder);
+        }
+        const content = document.createElement('div');
+        content.className = 'field-report-content';
+        content.append(makeTextElement('span', 'field-report-type', report.type === 'project' ? 'Project update' : 'Activity report'));
+        content.append(makeTextElement('h3', '', report.title));
+        content.append(makeTextElement('p', '', report.description));
+        const meta = document.createElement('div');
+        meta.className = 'field-report-meta';
+        meta.append(makeTextElement('span', '', `${report.executive}${report.position ? ` · ${report.position}` : ''}`));
+        meta.append(makeTextElement('span', '', new Date(`${report.activityDate}T00:00:00`).toLocaleDateString()));
+        meta.append(makeTextElement('span', '', report.location));
+        content.append(meta);
+        card.append(content);
+        container.append(card);
+      });
+    }
+    renderExecutives(executiveRoles);
+
+    fetch('/api/content.php', { headers: { Accept: 'application/json' } })
+      .then(response => {
+        if (!response.ok) throw new Error(`Content request failed (${response.status})`);
+        return response.json();
+      })
+      .then(content => {
+        renderNews([...(content.news || []), ...(content.events || [])]);
+        renderProjects(content.projects || []);
+        renderExecutives(content.executives || executiveRoles);
+        renderGallery(content.gallery || []);
+      })
+      .catch(error => {
+        console.error('Could not load approved constituency content:', error);
+        renderExecutives(executiveRoles);
+      });
+    fetch('/api/reports.php', { headers: { Accept: 'application/json' } })
+      .then(response => {
+        if (!response.ok) throw new Error(`Reports request failed (${response.status})`);
+        return response.json();
+      })
+      .then(data => renderFieldReports(data.reports || []))
+      .catch(error => console.error('Could not load approved executive reports:', error));
+  </script>
+    <script type="module">
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js';
+      import { getAnalytics, isSupported } from 'https://www.gstatic.com/firebasejs/11.10.0/firebase-analytics.js';
+
+      const firebaseConfig = {
+        apiKey: 'AIzaSyCWt1umi8kl4Ce0jyPIaExErpvm8XWnK04',
+        authDomain: 'lower-west-akim-ndc-cons.firebaseapp.com',
+        projectId: 'lower-west-akim-ndc-cons',
+        storageBucket: 'lower-west-akim-ndc-cons.firebasestorage.app',
+        messagingSenderId: '176470854888',
+        appId: '1:176470854888:web:c9bcb8ea2cee2a4cf68d5d',
+        measurementId: 'G-09LF9JEBKK'
+      };
+
+      const app = initializeApp(firebaseConfig);
+      isSupported()
+        .then(supported => {
+          if (supported) getAnalytics(app);
+        })
+        .catch(error => console.error('Could not initialize Firebase Analytics:', error));
+    </script>
+</body>
+</html>
